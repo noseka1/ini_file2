@@ -12,7 +12,7 @@
   - name: Set property value in the first section (option commented out)
     ini_file2: dest="{{ workdir }}/file03.ini" section=sect1 option=opt1 value=somevalue
 
-  - name: Comment ou property value in the first section
+  - name: Comment out property value in the first section
     ini_file2: dest="{{ workdir }}/file04.ini" section=sect1 option=opt1 state=absent
 
   - name: Remove section sect1
