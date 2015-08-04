@@ -1,0 +1,25 @@
+- name: Test cases for ini_file2 Ansible module
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+  - name: Change property value in the first section
+    ini_file2: dest="{{ workdir }}/file01.ini" section=sect1 option=opt1 value=newvalue
+
+  - name: Change property value in the first section (2 section file)
+    ini_file2: dest="{{ workdir }}/file02.ini" section=sect1 option=opt1 value=newvalue
+
+  - name: Set property value in the first section (option commented out)
+    ini_file2: dest="{{ workdir }}/file03.ini" section=sect1 option=opt1 value=somevalue
+
+  - name: Comment ou property value in the first section
+    ini_file2: dest="{{ workdir }}/file04.ini" section=sect1 option=opt1 state=absent
+
+  - name: Remove section sect1
+    ini_file2: dest="{{ workdir }}/file05.ini" section=sect1 state=absent
+
+  - name: Remove section sect1 (2 section file)
+    ini_file2: dest="{{ workdir }}/file06.ini" section=sect1 state=absent
+
+  - name: Add section and a option
+    ini_file2: dest="{{ workdir }}/file07.ini" section=sect3 option=myopt value=myvalue
