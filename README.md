@@ -1,2 +1,2 @@
 # ini_file2
-Improvement of the Ansible module ini_file
+Refer to Improving Ansible's ini_file module at http://alesnosek.com/blog/2015/08/03/improving-ansibles-ini-file-module/
