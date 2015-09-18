@@ -23,3 +23,9 @@
 
   - name: Add section and a option
     ini_file2: dest="{{ workdir }}/file07.ini" section=sect3 option=myopt value=myvalue
+
+  - name: Change option that appears two times (commented in and commented out)
+    ini_file2: dest="{{ workdir }}/file08.ini" section=sect1 option=opt1 value=val3
+
+  - name: Change option that appears two times (commented in and commented out)
+    ini_file2: dest="{{ workdir }}/file09.ini" section=sect2 option=opt2 value=val3
