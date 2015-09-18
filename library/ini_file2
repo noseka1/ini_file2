@@ -132,16 +132,16 @@ def do_ini(module, filename, section=None, option=None, value=None, state='prese
                         changed = ini_lines[index] != newline
                         ini_lines[index] = newline
                         if changed:
-                          # remove all possible option occurences from the rest of the section
-                          index = index + 1
-                          while index < len(ini_lines):
-                            line = ini_lines[index]
-                            if line.startswith('['):
-                              break
-                            if re.match('%s *=' % option, line):
-                              del ini_lines[index]
-                            else:
-                              index = index + 1
+                            # remove all possible option occurences from the rest of the section
+                            index = index + 1
+                            while index < len(ini_lines):
+                                line = ini_lines[index]
+                                if line.startswith('['):
+                                    break
+                                if re.match('%s *=' % option, line):
+                                    del ini_lines[index]
+                                else:
+                                    index = index + 1
                         break
                 else:
                     # comment out the existing option line
