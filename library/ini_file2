@@ -99,7 +99,7 @@ def do_ini(module, filename, section=None, option=None, value=None, state='prese
 
     with open(filename, 'r') as ini_file:
         ini_lines = ini_file.readlines()
-        # append faked section line to simplify the logic
+        # append a fake section line to simplify the logic
         ini_lines.append('[')
 
     within_section = not section
@@ -150,7 +150,7 @@ def do_ini(module, filename, section=None, option=None, value=None, state='prese
                         changed = True
                         break
 
-    # remove faked section line
+    # remove the fake section line
     del ini_lines[-1:]
 
     if not within_section and option and state == 'present':
