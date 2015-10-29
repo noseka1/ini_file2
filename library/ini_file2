@@ -66,6 +66,12 @@ options:
      description:
        - all arguments accepted by the M(file) module also work here
      required: false
+  state:
+     description:
+       - If set to C(absent) the option or section will be removed if present instead of created.
+     required: false
+     default: "present"
+     choices: [ "present", "absent" ]
 notes:
    - While it is possible to add an I(option) without specifying a I(value), this makes
      no sense.
@@ -204,4 +210,5 @@ def main():
 
 # import module snippets
 from ansible.module_utils.basic import *
-main()
+if __name__ == '__main__':
+    main()
